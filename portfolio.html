@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Marketing Portfolio - Avengers Nexus</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #d4af37;
+            --accent: #e63946;
+            --dark: #0f0f1e;
+            --light: #f1f1f1;
+            --text: #e0e0e0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: var(--text);
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 2px solid var(--secondary);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, var(--secondary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo::before {
+            content: "⚡";
+            font-size: 2rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(230, 57, 70, 0.1), transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.1), transparent 50%);
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            animation: slideUp 1s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--secondary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: var(--secondary);
+            font-weight: 300;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: var(--text);
+            margin-bottom: 3rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(135deg, var(--secondary), var(--accent));
+            color: var(--dark);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin: 0 0.5rem;
+            cursor: pointer;
+            border: none;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
+        }
+
+        .cta-button.secondary:hover {
+            background: rgba(212, 175, 55, 0.1);
+        }
+
+        /* Expertise Section */
+        .expertise {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--secondary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .expertise-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--secondary);
+            padding: 2rem;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .expertise-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .expertise-card:hover::before {
+            left: 100%;
+        }
+
+        .expertise-card:hover {
+            background: rgba(212, 175, 55, 0.1);
+            border-color: var(--accent);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.2);
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .expertise-card h3 {
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .expertise-card p {
+            color: var(--text);
+            line-height: 1.6;
+            opacity: 0.8;
+        }
+
+        /* Experience Section */
+        .experience {
+            padding: 4rem 2rem;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .experience-timeline {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            opacity: 0;
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .timeline-marker {
+            width: 40px;
+            height: 40px;
+            background: var(--secondary);
+            border-radius: 50%;
+            position: relative;
+            flex-shrink: 0;
+            margin-top: 0.5rem;
+        }
+
+        .timeline-marker::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 20px;
+            height: 20px;
+            background: var(--primary);
+            border-radius: 50%;
+        }
+
+        .timeline-content h3 {
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content .year {
+            color: var(--accent);
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content p {
+            color: var(--text);
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+
+        /* Skills Section */
+        .skills {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .skill-item {
+            text-align: center;
+        }
+
+        .skill-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--secondary), var(--accent));
+            color: var(--dark);
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .skill-badge:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 4rem 2rem;
+            background: rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            border: 2px solid var(--secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1.3rem;
+        }
+
+        .social-link:hover {
+            background: var(--secondary);
+            color: var(--dark);
+            transform: translateY(-5px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            padding: 2rem;
+            text-align: center;
+            border-top: 2px solid var(--secondary);
+            color: var(--text);
+            opacity: 0.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .timeline-item {
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">NEXUS</div>
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#expertise">Expertise</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1>DIGITAL MARKETING STRATEGIST</h1>
+            <p>Avengers of Brand Building</p>
+            <div class="hero-subtitle">8 Years of Excellence • Performance-Driven Results</div>
+            <div>
+                <button class="cta-button" onclick="scrollToSection('contact')">Start Your Mission</button>
+                <button class="cta-button secondary" onclick="scrollToSection('expertise')">View Arsenal</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section id="expertise" class="expertise">
+        <h2 class="section-title">Core Expertise</h2>
+        <div class="expertise-grid">
+            <div class="expertise-card">
+                <div class="card-icon">🎯</div>
+                <h3>Brand Building</h3>
+                <p>Crafting powerful brand identities that resonate with audiences and stand the test of time.</p>
+            </div>
+            <div class="expertise-card">
+                <div class="card-icon">📊</div>
+                <h3>Performance Marketing</h3>
+                <p>Data-driven campaigns that maximize ROI and drive measurable business growth.</p>
+            </div>
+            <div class="expertise-card">
+                <div class="card-icon">🔍</div>
+                <h3>SEO & SEM</h3>
+                <p>Technical and strategic optimization to dominate search rankings and capture high-intent traffic.</p>
+            </div>
+            <div class="expertise-card">
+                <div class="card-icon">🤖</div>
+                <h3>AI & Automation</h3>
+                <p>Leveraging cutting-edge AI tools to scale marketing operations and enhance personalization.</p>
+            </div>
+            <div class="expertise-card">
+                <div class="card-icon">📱</div>
+                <h3>Social Strategy</h3>
+                <p>Building engaged communities and viral campaigns across all major social platforms.</p>
+            </div>
+            <div class="expertise-card">
+                <div class="card-icon">💡</div>
+                <h3>Growth Strategy</h3>
+                <p>Identifying and executing growth opportunities through innovative marketing tactics.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <h2 class="section-title">8 Years in Action</h2>
+        <div class="experience-timeline">
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <h3>Senior Digital Marketing Strategist</h3>
+                    <div class="year">2023 - Present</div>
+                    <p>Leading integrated campaigns for Fortune 500 brands, achieving 300% ROI improvement and scaling revenue to $50M+</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <h3>Performance Marketing Manager</h3>
+                    <div class="year">2020 - 2023</div>
+                    <p>Managed $10M+ annual marketing budget across 15 brands, implementing AI-driven optimization strategies</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <h3>Digital Marketing Specialist</h3>
+                    <div class="year">2018 - 2020</div>
+                    <p>Built and scaled digital presence for startups to enterprise, specializing in SEO and content strategy</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <h2 class="section-title">Arsenal</h2>
+        <div class="skills-grid">
+            <div class="skill-item">
+                <div class="skill-badge">Google Analytics 4</div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-badge">SEMrush & Ahrefs</div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-badge">Meta Business Suite</div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-badge">HubSpot & Marketo</div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-badge">ChatGPT & Claude</div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-badge">Google Ads & PPC</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2 class="section-title">Assemble the Team</h2>
+        <div class="contact-content">
+            <p>Ready to transform your digital strategy? Let's create something extraordinary together.</p>
+            <div class="social-links">
+                <a href="#" class="social-link" title="LinkedIn">in</a>
+                <a href="#" class="social-link" title="Twitter">𝕏</a>
+                <a href="#" class="social-link" title="Email">✉</a>
+            </div>
+            <button class="cta-button">Get Started</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Digital Marketing Nexus | Assembled by Avengers of Performance Marketing</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Intersection Observer for animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        // Observe expertise cards
+        document.querySelectorAll('.expertise-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'all 0.6s ease-out';
+            observer.observe(card);
+        });
+
+        // Interactive card hover effect
+        document.querySelectorAll('.expertise-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.background = 'rgba(212, 175, 55, 0.15)';
+            });
+            card.addEventListener('mouseleave', function() {
+                this.style.background = 'rgba(255, 255, 255, 0.05)';
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.background = 'rgba(26, 26, 46, 0.98)';
+            } else {
+                nav.style.background = 'rgba(26, 26, 46, 0.95)';
+            }
+        });
+
+        // Click handlers for social links
+        document.querySelectorAll('.social-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                alert('Connect with me! Social links would go here.');
+            });
+        });
+
+        // Button click handlers
+        document.querySelectorAll('.cta-button').forEach(button => {
+            button.addEventListener('click', function() {
+                if (this.textContent.includes('Get Started')) {
+                    alert('Let\'s connect! Email: manojkumarrko72@gmail.com');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
