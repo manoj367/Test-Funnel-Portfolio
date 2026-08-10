@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Marketing Portfolio - Avengers Nexus</title>
+    <title>Manoj Kumar - Digital Marketing Portfolio</title>
     <style>
         * {
             margin: 0;
@@ -12,436 +12,565 @@
         }
 
         :root {
-            --primary: #1a1a2e;
-            --secondary: #d4af37;
-            --accent: #e63946;
-            --dark: #0f0f1e;
-            --light: #f1f1f1;
-            --text: #e0e0e0;
+            --primary: #000;
+            --secondary: #f5f5f5;
+            --text: #333;
+            --light-text: #666;
+            --accent: #0066cc;
+            --border: #e0e0e0;
         }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
             color: var(--text);
-            overflow-x: hidden;
-            min-height: 100vh;
+            line-height: 1.6;
+            background: #fff;
         }
 
         /* Navigation */
         nav {
-            position: fixed;
+            position: sticky;
             top: 0;
-            width: 100%;
-            background: rgba(26, 26, 46, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 1rem 2rem;
+            background: #fff;
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 5%;
+            z-index: 1000;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            z-index: 1000;
-            border-bottom: 2px solid var(--secondary);
         }
 
         .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            background: linear-gradient(135deg, var(--secondary), var(--accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .logo::before {
-            content: "⚡";
-            font-size: 2rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
         }
 
         nav ul {
             list-style: none;
             display: flex;
-            gap: 2rem;
+            gap: 3rem;
         }
 
         nav a {
             color: var(--text);
             text-decoration: none;
-            transition: all 0.3s ease;
+            font-size: 0.95rem;
             font-weight: 500;
-            position: relative;
+            transition: color 0.3s;
         }
 
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--secondary);
-            transition: width 0.3s ease;
-        }
-
-        nav a:hover::after {
-            width: 100%;
+        nav a:hover {
+            color: var(--accent);
         }
 
         /* Hero Section */
         .hero {
-            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            padding: 4rem 5%;
+            background: #fff;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: var(--light-text);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 500px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-top: 60px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 20% 50%, rgba(230, 57, 70, 0.1), transparent 50%),
-                        radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.1), transparent 50%);
-            animation: pulse 8s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 0.5; }
-            50% { opacity: 1; }
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            animation: slideUp 1s ease-out;
-        }
-
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, var(--secondary), var(--accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero p {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            color: var(--secondary);
-            font-weight: 300;
-        }
-
-        .hero-subtitle {
-            font-size: 1.1rem;
-            color: var(--text);
-            margin-bottom: 3rem;
-            opacity: 0.9;
+            color: white;
+            font-size: 1.2rem;
         }
 
         .cta-button {
             display: inline-block;
             padding: 1rem 2.5rem;
-            background: linear-gradient(135deg, var(--secondary), var(--accent));
-            color: var(--dark);
+            background: var(--primary);
+            color: white;
             text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            margin: 0 0.5rem;
-            cursor: pointer;
-            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid var(--primary);
         }
 
         .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
-        }
-
-        .cta-button.secondary {
             background: transparent;
-            border: 2px solid var(--secondary);
-            color: var(--secondary);
+            color: var(--primary);
         }
 
-        .cta-button.secondary:hover {
-            background: rgba(212, 175, 55, 0.1);
+        /* About Section */
+        .about {
+            padding: 4rem 5%;
+            background: var(--secondary);
         }
 
-        /* Expertise Section */
-        .expertise {
-            padding: 4rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
+        .about h2 {
             font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 3rem;
-            color: var(--secondary);
-            text-transform: uppercase;
-            letter-spacing: 2px;
+            margin-bottom: 2rem;
+            color: var(--primary);
         }
 
-        .expertise-grid {
+        .about p {
+            font-size: 1rem;
+            color: var(--light-text);
+            line-height: 1.8;
+            max-width: 800px;
+            margin-bottom: 1.5rem;
+        }
+
+        /* What I Do Section */
+        .what-i-do {
+            padding: 4rem 5%;
+            background: #fff;
+        }
+
+        .what-i-do h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--primary);
+        }
+
+        .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
         }
 
-        .expertise-card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--secondary);
+        .service-card {
+            padding: 2rem;
+            background: var(--secondary);
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+
+        .service-card:hover {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .service-card p {
+            color: var(--light-text);
+            font-size: 0.95rem;
+        }
+
+        /* Two Column Section */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            padding: 4rem 5%;
+            background: #fff;
+        }
+
+        .two-column.alt {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .two-column.alt .content {
+            order: 2;
+        }
+
+        .two-column.alt .image {
+            order: 1;
+        }
+
+        .two-column h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .two-column p {
+            color: var(--light-text);
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .image-placeholder {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.1rem;
+        }
+
+        /* Experience & Education */
+        .exp-edu {
+            padding: 4rem 5%;
+            background: var(--secondary);
+        }
+
+        .exp-edu h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--primary);
+        }
+
+        .exp-edu-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .exp-edu-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: var(--primary);
+        }
+
+        .exp-item, .edu-item {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .exp-item:last-child, .edu-item:last-child {
+            border-bottom: none;
+        }
+
+        .exp-item h4, .edu-item h4 {
+            font-size: 1.1rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .exp-item .year, .edu-item .year {
+            font-size: 0.9rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .exp-item p, .edu-item p {
+            color: var(--light-text);
+            font-size: 0.9rem;
+        }
+
+        /* Case Studies */
+        .case-studies {
+            padding: 4rem 5%;
+            background: #fff;
+        }
+
+        .case-studies h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--primary);
+        }
+
+        .case-study {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin-bottom: 5rem;
+        }
+
+        .case-study.alt {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .case-study.alt .content {
+            order: 2;
+        }
+
+        .case-study.alt .image {
+            order: 1;
+        }
+
+        .case-study h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .case-study-meta {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--light-text);
+        }
+
+        .case-study-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .case-study p {
+            color: var(--light-text);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .case-study-image {
+            width: 100%;
+            height: 350px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1rem;
+        }
+
+        /* Tools Section */
+        .tools-section {
+            padding: 4rem 5%;
+            background: var(--secondary);
+        }
+
+        .tools-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--primary);
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+        }
+
+        .tool-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+
+        .tool-item:hover {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .tool-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tool-item p {
+            font-size: 0.9rem;
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        /* Brands Section */
+        .brands-section {
+            padding: 4rem 5%;
+            background: #fff;
+        }
+
+        .brands-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--primary);
+        }
+
+        .brands-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 2rem;
+        }
+
+        .brand-item {
+            height: 150px;
+            background: var(--secondary);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: var(--text);
+            transition: all 0.3s;
+        }
+
+        .brand-item:hover {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Certifications Section */
+        .certifications {
+            padding: 4rem 5%;
+            background: var(--secondary);
+        }
+
+        .certifications h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--primary);
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 2rem;
+        }
+
+        .cert-item {
+            background: white;
             padding: 2rem;
             border-radius: 10px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
+            text-align: center;
+            transition: all 0.3s;
         }
 
-        .expertise-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.2), transparent);
-            transition: left 0.5s ease;
+        .cert-item:hover {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
 
-        .expertise-card:hover::before {
-            left: 100%;
-        }
-
-        .expertise-card:hover {
-            background: rgba(212, 175, 55, 0.1);
-            border-color: var(--accent);
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.2);
-        }
-
-        .card-icon {
+        .cert-icon {
             font-size: 3rem;
             margin-bottom: 1rem;
         }
 
-        .expertise-card h3 {
-            color: var(--secondary);
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
+        .cert-item h3 {
+            font-size: 1rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
         }
 
-        .expertise-card p {
-            color: var(--text);
-            line-height: 1.6;
-            opacity: 0.8;
+        .cert-item p {
+            font-size: 0.85rem;
+            color: var(--light-text);
         }
 
-        /* Experience Section */
-        .experience {
-            padding: 4rem 2rem;
-            background: rgba(0, 0, 0, 0.3);
-        }
-
-        .experience-timeline {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .timeline-item {
-            display: flex;
-            gap: 2rem;
-            margin-bottom: 3rem;
-            opacity: 0;
-            animation: fadeInUp 0.6s ease-out forwards;
-        }
-
-        .timeline-item:nth-child(1) { animation-delay: 0.1s; }
-        .timeline-item:nth-child(2) { animation-delay: 0.2s; }
-        .timeline-item:nth-child(3) { animation-delay: 0.3s; }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .timeline-marker {
-            width: 40px;
-            height: 40px;
-            background: var(--secondary);
-            border-radius: 50%;
-            position: relative;
-            flex-shrink: 0;
-            margin-top: 0.5rem;
-        }
-
-        .timeline-marker::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 20px;
-            height: 20px;
+        /* Thank You Section */
+        .thank-you {
+            padding: 6rem 5%;
             background: var(--primary);
-            border-radius: 50%;
-        }
-
-        .timeline-content h3 {
-            color: var(--secondary);
-            margin-bottom: 0.5rem;
-        }
-
-        .timeline-content .year {
-            color: var(--accent);
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-
-        .timeline-content p {
-            color: var(--text);
-            opacity: 0.8;
-            line-height: 1.6;
-        }
-
-        /* Skills Section */
-        .skills {
-            padding: 4rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .skill-item {
+            color: white;
             text-align: center;
         }
 
-        .skill-badge {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--secondary), var(--accent));
-            color: var(--dark);
-            padding: 1rem 2rem;
-            border-radius: 25px;
-            font-weight: bold;
-            margin-bottom: 1rem;
-            transition: all 0.3s ease;
+        .thank-you h2 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
         }
 
-        .skill-badge:hover {
-            transform: scale(1.1);
-            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
-        }
-
-        /* Contact Section */
-        .contact {
-            padding: 4rem 2rem;
-            background: rgba(0, 0, 0, 0.3);
-            text-align: center;
-        }
-
-        .contact-content {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .contact p {
+        .thank-you p {
             font-size: 1.1rem;
-            margin-bottom: 2rem;
+            margin-bottom: 3rem;
             opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 2rem;
+        .thank-you .cta-button {
+            background: white;
+            color: var(--primary);
+            border-color: white;
         }
 
-        .social-link {
-            width: 50px;
-            height: 50px;
-            border: 2px solid var(--secondary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--secondary);
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-size: 1.3rem;
+        .thank-you .cta-button:hover {
+            background: transparent;
+            color: white;
         }
 
-        .social-link:hover {
-            background: var(--secondary);
-            color: var(--dark);
-            transform: translateY(-5px);
-        }
-
-        /* Footer */
-        footer {
-            background: var(--dark);
-            padding: 2rem;
-            text-align: center;
-            border-top: 2px solid var(--secondary);
-            color: var(--text);
-            opacity: 0.8;
-        }
-
-        /* Responsive */
+        /* Responsive Design */
         @media (max-width: 768px) {
-            nav ul {
+            nav {
+                flex-direction: column;
                 gap: 1rem;
-                font-size: 0.9rem;
             }
 
-            .hero h1 {
-                font-size: 2.5rem;
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
             }
 
-            .hero p {
-                font-size: 1.2rem;
+            .hero {
+                grid-template-columns: 1fr;
+                padding: 2rem 5%;
             }
 
-            .section-title {
+            .hero-content h1 {
                 font-size: 2rem;
             }
 
-            .timeline-item {
-                gap: 1rem;
+            .hero-image {
+                height: 300px;
+            }
+
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+
+            .two-column.alt .content,
+            .two-column.alt .image {
+                order: unset;
+            }
+
+            .image-placeholder {
+                height: 300px;
+            }
+
+            .exp-edu-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .case-study {
+                grid-template-columns: 1fr;
+            }
+
+            .case-study.alt .content,
+            .case-study.alt .image {
+                order: unset;
+            }
+
+            .case-study-image {
+                height: 250px;
+            }
+
+            .tools-grid {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            }
+
+            .brands-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+
+            .cert-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+
+            .thank-you h2 {
+                font-size: 2rem;
             }
         }
     </style>
@@ -449,205 +578,268 @@
 <body>
     <!-- Navigation -->
     <nav>
-        <div class="logo">NEXUS</div>
+        <div class="logo">Manoj Kumar</div>
         <ul>
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#expertise">Expertise</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#skills">Skills</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#case-studies">Case Studies</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
     <!-- Hero Section -->
-    <section id="hero" class="hero">
+    <section class="hero">
         <div class="hero-content">
-            <h1>DIGITAL MARKETING STRATEGIST</h1>
-            <p>Avengers of Brand Building</p>
-            <div class="hero-subtitle">8 Years of Excellence • Performance-Driven Results</div>
-            <div>
-                <button class="cta-button" onclick="scrollToSection('contact')">Start Your Mission</button>
-                <button class="cta-button secondary" onclick="scrollToSection('expertise')">View Arsenal</button>
+            <h1>Digital Marketing Strategist</h1>
+            <p>8+ years of experience in brand building, performance marketing, SEO optimization, and AI-driven marketing strategies. I help businesses scale through data-driven campaigns and innovative marketing solutions.</p>
+            <a href="#contact" class="cta-button">Get In Touch</a>
+        </div>
+        <div class="hero-image">
+            📊 Digital Marketing Expertise
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <h2>About</h2>
+        <p>I'm a passionate digital marketer with a proven track record of transforming businesses through strategic marketing initiatives. Over 8+ years, I've helped startups and enterprises achieve remarkable growth through innovative strategies, data-driven decision-making, and cutting-edge marketing technologies.</p>
+        <p>My approach combines creative storytelling with analytical rigor, ensuring every campaign delivers measurable results. I specialize in building brands that resonate with audiences and creating marketing systems that scale.</p>
+    </section>
+
+    <!-- What I Do Section -->
+    <section class="what-i-do" id="services">
+        <h2>What I Do</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>🎯 Brand Building</h3>
+                <p>Create compelling brand identities that stand out in competitive markets and connect with your target audience.</p>
+            </div>
+            <div class="service-card">
+                <h3>📈 Performance Marketing</h3>
+                <p>Data-driven campaigns that maximize ROI through continuous testing, optimization, and strategic targeting.</p>
+            </div>
+            <div class="service-card">
+                <h3>🔍 SEO & SEM</h3>
+                <p>Comprehensive search marketing strategies to dominate organic rankings and paid search campaigns.</p>
+            </div>
+            <div class="service-card">
+                <h3>📊 Analytics & Reporting</h3>
+                <p>Deep insights into campaign performance with actionable recommendations for continuous improvement.</p>
+            </div>
+            <div class="service-card">
+                <h3>🤖 AI & Automation</h3>
+                <p>Leverage AI tools and marketing automation to scale operations and enhance personalization.</p>
+            </div>
+            <div class="service-card">
+                <h3>💡 Growth Strategy</h3>
+                <p>Strategic planning and execution of growth initiatives that drive sustainable business expansion.</p>
             </div>
         </div>
     </section>
 
-    <!-- Expertise Section -->
-    <section id="expertise" class="expertise">
-        <h2 class="section-title">Core Expertise</h2>
-        <div class="expertise-grid">
-            <div class="expertise-card">
-                <div class="card-icon">🎯</div>
-                <h3>Brand Building</h3>
-                <p>Crafting powerful brand identities that resonate with audiences and stand the test of time.</p>
-            </div>
-            <div class="expertise-card">
-                <div class="card-icon">📊</div>
-                <h3>Performance Marketing</h3>
-                <p>Data-driven campaigns that maximize ROI and drive measurable business growth.</p>
-            </div>
-            <div class="expertise-card">
-                <div class="card-icon">🔍</div>
-                <h3>SEO & SEM</h3>
-                <p>Technical and strategic optimization to dominate search rankings and capture high-intent traffic.</p>
-            </div>
-            <div class="expertise-card">
-                <div class="card-icon">🤖</div>
-                <h3>AI & Automation</h3>
-                <p>Leveraging cutting-edge AI tools to scale marketing operations and enhance personalization.</p>
-            </div>
-            <div class="expertise-card">
-                <div class="card-icon">📱</div>
-                <h3>Social Strategy</h3>
-                <p>Building engaged communities and viral campaigns across all major social platforms.</p>
-            </div>
-            <div class="expertise-card">
-                <div class="card-icon">💡</div>
-                <h3>Growth Strategy</h3>
-                <p>Identifying and executing growth opportunities through innovative marketing tactics.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="experience">
-        <h2 class="section-title">8 Years in Action</h2>
-        <div class="experience-timeline">
-            <div class="timeline-item">
-                <div class="timeline-marker"></div>
-                <div class="timeline-content">
-                    <h3>Senior Digital Marketing Strategist</h3>
+    <!-- Experience & Education Section -->
+    <section class="exp-edu">
+        <h2>Experience & Education</h2>
+        <div class="exp-edu-grid">
+            <div class="exp-edu-column">
+                <h3>Experience</h3>
+                <div class="exp-item">
+                    <h4>Senior Digital Marketing Strategist</h4>
                     <div class="year">2023 - Present</div>
                     <p>Leading integrated campaigns for Fortune 500 brands, achieving 300% ROI improvement and scaling revenue to $50M+</p>
                 </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-marker"></div>
-                <div class="timeline-content">
-                    <h3>Performance Marketing Manager</h3>
+                <div class="exp-item">
+                    <h4>Performance Marketing Manager</h4>
                     <div class="year">2020 - 2023</div>
                     <p>Managed $10M+ annual marketing budget across 15 brands, implementing AI-driven optimization strategies</p>
                 </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-marker"></div>
-                <div class="timeline-content">
-                    <h3>Digital Marketing Specialist</h3>
+                <div class="exp-item">
+                    <h4>Digital Marketing Specialist</h4>
                     <div class="year">2018 - 2020</div>
                     <p>Built and scaled digital presence for startups to enterprise, specializing in SEO and content strategy</p>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <h2 class="section-title">Arsenal</h2>
-        <div class="skills-grid">
-            <div class="skill-item">
-                <div class="skill-badge">Google Analytics 4</div>
-            </div>
-            <div class="skill-item">
-                <div class="skill-badge">SEMrush & Ahrefs</div>
-            </div>
-            <div class="skill-item">
-                <div class="skill-badge">Meta Business Suite</div>
-            </div>
-            <div class="skill-item">
-                <div class="skill-badge">HubSpot & Marketo</div>
-            </div>
-            <div class="skill-item">
-                <div class="skill-badge">ChatGPT & Claude</div>
-            </div>
-            <div class="skill-item">
-                <div class="skill-badge">Google Ads & PPC</div>
+            <div class="exp-edu-column">
+                <h3>Education</h3>
+                <div class="edu-item">
+                    <h4>MBA in Digital Marketing</h4>
+                    <div class="year">2018</div>
+                    <p>Master's degree focusing on digital strategy, consumer psychology, and marketing analytics</p>
+                </div>
+                <div class="edu-item">
+                    <h4>Google Analytics Certification</h4>
+                    <div class="year">2019</div>
+                    <p>Advanced certification in Google Analytics and data-driven marketing insights</p>
+                </div>
+                <div class="edu-item">
+                    <h4>HubSpot Marketing Certification</h4>
+                    <div class="year">2020</div>
+                    <p>Professional certification in marketing automation and inbound marketing methodology</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <h2 class="section-title">Assemble the Team</h2>
-        <div class="contact-content">
-            <p>Ready to transform your digital strategy? Let's create something extraordinary together.</p>
-            <div class="social-links">
-                <a href="#" class="social-link" title="LinkedIn">in</a>
-                <a href="#" class="social-link" title="Twitter">𝕏</a>
-                <a href="#" class="social-link" title="Email">✉</a>
+    <!-- Case Studies Section -->
+    <section class="case-studies" id="case-studies">
+        <h2>Case Studies</h2>
+
+        <div class="case-study">
+            <div class="content">
+                <h3>E-Commerce Platform Growth</h3>
+                <div class="case-study-meta">
+                    <span>📅 2023-2024</span>
+                    <span>💼 Strategy & Execution</span>
+                </div>
+                <p>Implemented a comprehensive marketing strategy for an e-commerce platform that resulted in 250% increase in online sales, 180% growth in organic traffic, and 85% improvement in customer retention through personalized email campaigns and strategic retargeting.</p>
+                <a href="#" class="cta-button">View Case Study</a>
             </div>
-            <button class="cta-button">Get Started</button>
+            <div class="image">
+                <div class="case-study-image">E-Commerce Growth Campaign</div>
+            </div>
+        </div>
+
+        <div class="case-study alt">
+            <div class="image">
+                <div class="case-study-image">SaaS Product Launch</div>
+            </div>
+            <div class="content">
+                <h3>SaaS Product Launch Campaign</h3>
+                <div class="case-study-meta">
+                    <span>📅 2022-2023</span>
+                    <span>💼 Product Marketing</span>
+                </div>
+                <p>Orchestrated a go-to-market strategy for a B2B SaaS product, acquiring 500+ enterprise clients in the first year through strategic partnerships, content marketing, and targeted advertising across LinkedIn and Google.</p>
+                <a href="#" class="cta-button">View Case Study</a>
+            </div>
+        </div>
+
+        <div class="case-study">
+            <div class="content">
+                <h3>Brand Repositioning Strategy</h3>
+                <div class="case-study-meta">
+                    <span>📅 2021-2022</span>
+                    <span>💼 Branding & Strategy</span>
+                </div>
+                <p>Led a complete brand repositioning for an established company, developing a new brand identity, messaging strategy, and omnichannel marketing campaign that increased brand awareness by 200% and repositioned them as industry leaders.</p>
+                <a href="#" class="cta-button">View Case Study</a>
+            </div>
+            <div class="image">
+                <div class="case-study-image">Brand Repositioning</div>
+            </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Digital Marketing Nexus | Assembled by Avengers of Performance Marketing</p>
-    </footer>
+    <!-- Tools & Platforms Section -->
+    <section class="tools-section">
+        <h2>Tools & Platforms</h2>
+        <div class="tools-grid">
+            <div class="tool-item">
+                <div class="tool-icon">📊</div>
+                <p>Google Analytics</p>
+            </div>
+            <div class="tool-item">
+                <div class="tool-icon">🔍</div>
+                <p>SEMrush</p>
+            </div>
+            <div class="tool-item">
+                <div class="tool-icon">🎯</div>
+                <p>Google Ads</p>
+            </div>
+            <div class="tool-item">
+                <div class="tool-icon">📱</div>
+                <p>Meta Business</p>
+            </div>
+            <div class="tool-item">
+                <div class="tool-icon">🔗</div>
+                <p>HubSpot</p>
+            </div>
+            <div class="tool-item">
+                <div class="tool-icon">📧</div>
+                <p>Marketo</p>
+            </div>
+            <div class="tool-item">
+                <div class="tool-icon">🤖</div>
+                <p>ChatGPT</p>
+            </div>
+            <div class="tool-item">
+                <div class="tool-icon">📈</div>
+                <p>Tableau</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Brands Section -->
+    <section class="brands-section">
+        <h2>Featured Brands</h2>
+        <div class="brands-grid">
+            <div class="brand-item">TechStart</div>
+            <div class="brand-item">EcommercePro</div>
+            <div class="brand-item">GlobalSoft</div>
+            <div class="brand-item">InnovateCo</div>
+            <div class="brand-item">DigitalHub</div>
+            <div class="brand-item">MarketPulse</div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section class="certifications">
+        <h2>Certifications</h2>
+        <div class="cert-grid">
+            <div class="cert-item">
+                <div class="cert-icon">🏆</div>
+                <h3>Google Analytics</h3>
+                <p>Advanced certification in GA4 and conversion tracking</p>
+            </div>
+            <div class="cert-item">
+                <div class="cert-icon">📱</div>
+                <h3>HubSpot Certified</h3>
+                <p>Marketing automation and inbound methodology</p>
+            </div>
+            <div class="cert-item">
+                <div class="cert-icon">💼</div>
+                <h3>Google Ads Certified</h3>
+                <p>Search and display advertising specialist</p>
+            </div>
+            <div class="cert-item">
+                <div class="cert-icon">🎯</div>
+                <h3>Meta Certified</h3>
+                <p>Facebook and Instagram marketing professional</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Thank You Section -->
+    <section class="thank-you" id="contact">
+        <h2>Let's Create Something Amazing</h2>
+        <p>Ready to take your digital marketing to the next level? Let's collaborate on strategies that drive real results for your business.</p>
+        <a href="mailto:manojkumarrko72@gmail.com" class="cta-button">Get In Touch</a>
+    </section>
 
     <script>
         // Smooth scrolling
-        function scrollToSection(sectionId) {
-            const element = document.getElementById(sectionId);
-            if (element) {
-                element.scrollIntoView({ behavior: 'smooth' });
-            }
-        }
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
 
-        // Intersection Observer for animations
+        // Intersection Observer for fade-in animations
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
+                    entry.target.style.animation = 'fadeIn 0.6s ease-in';
                 }
             });
-        }, {
-            threshold: 0.1
-        });
+        }, { threshold: 0.1 });
 
-        // Observe expertise cards
-        document.querySelectorAll('.expertise-card').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(20px)';
-            card.style.transition = 'all 0.6s ease-out';
-            observer.observe(card);
-        });
-
-        // Interactive card hover effect
-        document.querySelectorAll('.expertise-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.background = 'rgba(212, 175, 55, 0.15)';
-            });
-            card.addEventListener('mouseleave', function() {
-                this.style.background = 'rgba(255, 255, 255, 0.05)';
-            });
-        });
-
-        // Navbar scroll effect
-        window.addEventListener('scroll', () => {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 50) {
-                nav.style.background = 'rgba(26, 26, 46, 0.98)';
-            } else {
-                nav.style.background = 'rgba(26, 26, 46, 0.95)';
-            }
-        });
-
-        // Click handlers for social links
-        document.querySelectorAll('.social-link').forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                alert('Connect with me! Social links would go here.');
-            });
-        });
-
-        // Button click handlers
-        document.querySelectorAll('.cta-button').forEach(button => {
-            button.addEventListener('click', function() {
-                if (this.textContent.includes('Get Started')) {
-                    alert('Let\'s connect! Email: manojkumarrko72@gmail.com');
-                }
-            });
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
         });
     </script>
 </body>
