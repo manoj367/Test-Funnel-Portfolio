@@ -3,103 +3,1146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manoj Kumar - Digital Marketing Portfolio</title>
+    <meta name="description" content="Manoj Kumar - Digital Marketing Strategist | 8+ years of expertise in brand building, performance marketing, SEO, and AI-driven strategies.">
+    <meta name="keywords" content="digital marketing, SEO, brand building, performance marketing, marketing strategist">
+    <title>Manoj Kumar - Digital Marketing Strategist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', sans-serif; background: #f5f5f5; color: #333; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
-        header { background: #0a0e27; color: white; padding: 2rem; text-align: center; margin-bottom: 2rem; border-radius: 10px; }
-        h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
-        .intro { font-size: 1.1rem; margin-bottom: 1rem; }
-        .expertise { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem; }
-        .card { background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-        .card h3 { color: #0a0e27; margin-bottom: 1rem; font-size: 1.3rem; }
-        .card p { color: #666; line-height: 1.6; }
-        .emoji { font-size: 2rem; margin-bottom: 1rem; }
-        footer { text-align: center; margin-top: 3rem; color: #666; padding-top: 2rem; border-top: 1px solid #ddd; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0a0e27;
+            --secondary: #f8f9fa;
+            --text-dark: #1a1a2e;
+            --text-light: #666;
+            --text-lighter: #999;
+            --accent: #0066cc;
+            --accent-hover: #0052a3;
+            --border: #e8e8e8;
+            --success: #2ecc71;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background: #fff;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            padding: 1.2rem 5%;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        nav a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            padding: 6rem 5%;
+            background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+            letter-spacing: -1px;
+        }
+
+        .hero-content p {
+            font-size: 1.05rem;
+            color: var(--text-light);
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 520px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            box-shadow: 0 20px 60px rgba(102, 126, 234, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: drift 20s linear infinite;
+        }
+
+        @keyframes drift {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary);
+            font-size: 0.95rem;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--accent-hover);
+            transition: left 0.3s ease;
+            z-index: -1;
+        }
+
+        .cta-button:hover {
+            left: 0;
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .cta-button.secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* About Section */
+        .about {
+            padding: 6rem 5%;
+            background: var(--secondary);
+        }
+
+        .about h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--text-dark);
+        }
+
+        .about p {
+            font-size: 1rem;
+            color: var(--text-light);
+            line-height: 1.9;
+            max-width: 900px;
+            margin-bottom: 1.5rem;
+        }
+
+        /* What I Do Section */
+        .what-i-do {
+            padding: 6rem 5%;
+            background: #fff;
+        }
+
+        .what-i-do h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3.5rem;
+            color: var(--text-dark);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .service-card {
+            padding: 2.5rem;
+            background: var(--secondary);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .service-card:hover {
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+            transform: translateY(-8px);
+            border-color: var(--accent);
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* Two Column Section */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            padding: 6rem 5%;
+            background: #fff;
+        }
+
+        .two-column.alt .content {
+            order: 2;
+        }
+
+        .two-column.alt .image {
+            order: 1;
+        }
+
+        .two-column h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .two-column p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .image-placeholder {
+            width: 100%;
+            height: 450px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1rem;
+            font-weight: 600;
+            box-shadow: 0 20px 60px rgba(102, 126, 234, 0.3);
+        }
+
+        /* Experience & Education */
+        .exp-edu {
+            padding: 6rem 5%;
+            background: var(--secondary);
+        }
+
+        .exp-edu h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3.5rem;
+            color: var(--text-dark);
+        }
+
+        .exp-edu-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .exp-edu-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 2.5rem;
+            color: var(--text-dark);
+        }
+
+        .exp-item, .edu-item {
+            margin-bottom: 2.5rem;
+            padding-bottom: 2.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .exp-item:last-child, .edu-item:last-child {
+            border-bottom: none;
+        }
+
+        .exp-item h4, .edu-item h4 {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .exp-item .year, .edu-item .year {
+            font-size: 0.85rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+        }
+
+        .exp-item p, .edu-item p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        /* Case Studies */
+        .case-studies {
+            padding: 6rem 5%;
+            background: #fff;
+        }
+
+        .case-studies h2 {
+            font-size: 2.5rem;
+            margin-bottom: 4rem;
+            color: var(--text-dark);
+        }
+
+        .case-study {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 6rem;
+        }
+
+        .case-study.alt .content {
+            order: 2;
+        }
+
+        .case-study.alt .image {
+            order: 1;
+        }
+
+        .case-study h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+            line-height: 1.2;
+        }
+
+        .case-study-meta {
+            display: flex;
+            gap: 2.5rem;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            color: var(--text-lighter);
+            flex-wrap: wrap;
+        }
+
+        .case-study-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .case-study p {
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .metrics {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .metric {
+            padding: 1.5rem;
+            background: var(--secondary);
+            border-radius: 10px;
+            border-left: 4px solid var(--accent);
+        }
+
+        .metric h4 {
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .metric p {
+            font-size: 0.9rem;
+            color: var(--text-lighter);
+            margin: 0;
+        }
+
+        .case-study-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1rem;
+            font-weight: 600;
+            box-shadow: 0 20px 60px rgba(102, 126, 234, 0.3);
+        }
+
+        /* Tools Section */
+        .tools-section {
+            padding: 6rem 5%;
+            background: var(--secondary);
+        }
+
+        .tools-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3.5rem;
+            color: var(--text-dark);
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 2rem;
+        }
+
+        .tool-item {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            border: 1px solid var(--border);
+        }
+
+        .tool-item:hover {
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+            transform: translateY(-8px);
+            border-color: var(--accent);
+        }
+
+        .tool-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tool-item p {
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        /* Brands Section */
+        .brands-section {
+            padding: 6rem 5%;
+            background: #fff;
+        }
+
+        .brands-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3.5rem;
+            color: var(--text-dark);
+        }
+
+        .brands-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .brand-item {
+            height: 160px;
+            background: var(--secondary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: var(--text-dark);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border);
+            padding: 1rem;
+            text-align: center;
+            font-size: 0.95rem;
+        }
+
+        .brand-item:hover {
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* Certifications Section */
+        .certifications {
+            padding: 6rem 5%;
+            background: var(--secondary);
+        }
+
+        .certifications h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3.5rem;
+            color: var(--text-dark);
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .cert-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid var(--border);
+        }
+
+        .cert-item:hover {
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+            transform: translateY(-8px);
+            border-color: var(--accent);
+        }
+
+        .cert-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .cert-item h3 {
+            font-size: 1.05rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .cert-item p {
+            font-size: 0.85rem;
+            color: var(--text-lighter);
+            margin: 0;
+        }
+
+        /* Thank You Section */
+        .thank-you {
+            padding: 8rem 5%;
+            background: linear-gradient(135deg, var(--primary) 0%, #1a1f3a 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .thank-you h2 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            letter-spacing: -0.5px;
+        }
+
+        .thank-you p {
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+        }
+
+        .thank-you .cta-button {
+            background: white;
+            color: var(--primary);
+            border-color: white;
+        }
+
+        .thank-you .cta-button:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: white;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 1.5rem;
+                padding: 1rem 5%;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+                width: 100%;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                padding: 3rem 5%;
+                gap: 2rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-image {
+                height: 350px;
+            }
+
+            .two-column {
+                grid-template-columns: 1fr;
+                padding: 3rem 5%;
+            }
+
+            .two-column.alt .content,
+            .two-column.alt .image {
+                order: unset;
+            }
+
+            .image-placeholder {
+                height: 300px;
+            }
+
+            .exp-edu-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .case-study {
+                grid-template-columns: 1fr;
+                margin-bottom: 4rem;
+            }
+
+            .case-study.alt .content,
+            .case-study.alt .image {
+                order: unset;
+            }
+
+            .case-study-image {
+                height: 300px;
+            }
+
+            .metrics {
+                grid-template-columns: 1fr;
+            }
+
+            .tools-grid {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            }
+
+            .brands-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+
+            .cert-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+
+            .thank-you h2 {
+                font-size: 2rem;
+            }
+
+            .what-i-do h2,
+            .case-studies h2,
+            .tools-section h2,
+            .brands-section h2,
+            .certifications h2,
+            .about h2,
+            .exp-edu h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav ul {
+                flex-direction: column;
+                gap: 0.5rem;
+                font-size: 0.85rem;
+            }
+
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+
+            .case-study h3 {
+                font-size: 1.5rem;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Manoj Kumar</h1>
-            <p class="intro">Digital Marketing Strategist</p>
-            <p>8+ Years of Excellence in Brand Building, Performance Marketing & AI-Driven Strategies</p>
-        </header>
+    <!-- Navigation -->
+    <nav>
+        <a href="#" class="logo">Manoj Kumar</a>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#case-studies">Case Studies</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-        <section>
-            <h2 style="margin-bottom: 2rem; color: #0a0e27;">What I Do</h2>
-            <div class="expertise">
-                <div class="card">
-                    <div class="emoji">🎯</div>
-                    <h3>Brand Strategy</h3>
-                    <p>Building compelling brand identities that resonate with audiences and create lasting connections.</p>
-                </div>
-                <div class="card">
-                    <div class="emoji">📈</div>
-                    <h3>Performance Marketing</h3>
-                    <p>Data-driven campaigns optimized for conversions and maximum ROI with measurable results.</p>
-                </div>
-                <div class="card">
-                    <div class="emoji">🔍</div>
-                    <h3>SEO & SEM Strategy</h3>
-                    <p>Technical and strategic optimization to dominate search rankings and capture high-intent traffic.</p>
-                </div>
-                <div class="card">
-                    <div class="emoji">📊</div>
-                    <h3>Analytics & Insights</h3>
-                    <p>Deep dive analytics and comprehensive reporting that transform data into strategic decisions.</p>
-                </div>
-                <div class="card">
-                    <div class="emoji">🤖</div>
-                    <h3>AI & Automation</h3>
-                    <p>Leveraging AI tools and marketing automation to scale operations and enhance personalization.</p>
-                </div>
-                <div class="card">
-                    <div class="emoji">💡</div>
-                    <h3>Growth Strategy</h3>
-                    <p>Strategic growth planning that identifies opportunities and drives sustainable business expansion.</p>
-                </div>
-            </div>
-        </section>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Digital Marketing Strategist</h1>
+            <p>8+ years of proven expertise in brand building, performance marketing, SEO optimization, and AI-driven marketing strategies. I transform businesses through data-driven campaigns and innovative solutions that deliver measurable results.</p>
+            <a href="#contact" class="cta-button">Let's Talk</a>
+        </div>
+        <div class="hero-image">
+            📊 Strategic Marketing Excellence
+        </div>
+    </section>
 
-        <section style="margin-top: 3rem;">
-            <h2 style="margin-bottom: 2rem; color: #0a0e27;">Experience</h2>
-            <div class="card">
-                <h3>Senior Digital Marketing Strategist</h3>
-                <p style="color: #0066cc; font-weight: bold; margin-bottom: 0.5rem;">2023 - Present</p>
-                <p>Leading integrated campaigns for Fortune 500 brands, achieving 300% ROI improvement and scaling revenue to $50M+</p>
-            </div>
-            <div class="card" style="margin-top: 1rem;">
-                <h3>Performance Marketing Manager</h3>
-                <p style="color: #0066cc; font-weight: bold; margin-bottom: 0.5rem;">2020 - 2023</p>
-                <p>Managed $10M+ annual marketing budget across 15 brands, implementing AI-driven optimization strategies</p>
-            </div>
-            <div class="card" style="margin-top: 1rem;">
-                <h3>Digital Marketing Specialist</h3>
-                <p style="color: #0066cc; font-weight: bold; margin-bottom: 0.5rem;">2018 - 2020</p>
-                <p>Built and scaled digital presence for startups to enterprises, specializing in SEO and content strategy</p>
-            </div>
-        </section>
+    <!-- About Section -->
+    <section class="about" id="about">
+        <h2>About</h2>
+        <p>I'm a passionate digital marketer dedicated to transforming business challenges into growth opportunities. With 8+ years of hands-on experience across startups and enterprises, I've developed a comprehensive understanding of what drives results in today's competitive digital landscape.</p>
+        <p>My approach combines strategic thinking with tactical execution. I believe in the power of data-driven decision-making, creative storytelling, and continuous optimization. Every campaign I lead is designed with clear objectives, measurable KPIs, and a commitment to delivering ROI that exceeds expectations.</p>
+        <p>Whether you're launching a new product, scaling a brand, or optimizing marketing operations, I bring a wealth of experience in building marketing systems that work.</p>
+    </section>
 
-        <section style="margin-top: 3rem;">
-            <h2 style="margin-bottom: 2rem; color: #0a0e27;">Tools & Platforms</h2>
-            <div class="card">
-                <p><strong>Marketing Tools:</strong> Google Analytics 4, SEMrush, Ahrefs, Google Ads, Meta Business Suite, HubSpot, Marketo, ChatGPT, Tableau, Figma</p>
+    <!-- What I Do Section -->
+    <section class="what-i-do" id="services">
+        <h2>What I Do</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>🎯 Brand Strategy</h3>
+                <p>Building compelling brand identities that resonate with audiences, differentiate in markets, and create lasting connections with your target customers.</p>
             </div>
-        </section>
-
-        <section style="margin-top: 3rem;">
-            <h2 style="margin-bottom: 2rem; color: #0a0e27;">Get In Touch</h2>
-            <div class="card">
-                <p>Ready to transform your digital marketing strategy? Let's create something amazing together.</p>
-                <p style="margin-top: 1rem;"><strong>Email:</strong> manojkumarrko72@gmail.com</p>
+            <div class="service-card">
+                <h3>📈 Performance Marketing</h3>
+                <p>Data-driven campaigns optimized for conversions. From PPC to email marketing, I create strategies that maximize ROI and scale revenue predictably.</p>
             </div>
-        </section>
+            <div class="service-card">
+                <h3>🔍 SEO & SEM Strategy</h3>
+                <p>Comprehensive search marketing solutions combining organic optimization and paid search expertise to dominate rankings and capture high-intent traffic.</p>
+            </div>
+            <div class="service-card">
+                <h3>📊 Analytics & Insights</h3>
+                <p>Deep dive analytics, actionable insights, and comprehensive reporting that transform data into strategic decisions and continuous improvement.</p>
+            </div>
+            <div class="service-card">
+                <h3>🤖 Marketing Automation</h3>
+                <p>AI-powered marketing automation strategies that scale operations, enhance personalization, and improve customer journey at every touchpoint.</p>
+            </div>
+            <div class="service-card">
+                <h3>💡 Growth Strategy</h3>
+                <p>Strategic growth planning and execution that identifies opportunities, optimizes funnels, and drives sustainable business expansion.</p>
+            </div>
+        </div>
+    </section>
 
-        <footer>
-            <p>&copy; 2024 Manoj Kumar - Digital Marketing Portfolio | All Rights Reserved</p>
-        </footer>
-    </div>
+    <!-- Experience & Education Section -->
+    <section class="exp-edu">
+        <h2>Experience & Education</h2>
+        <div class="exp-edu-grid">
+            <div class="exp-edu-column">
+                <h3>Experience</h3>
+                <div class="exp-item">
+                    <h4>Senior Digital Marketing Strategist</h4>
+                    <div class="year">2023 - Present</div>
+                    <p>Leading integrated marketing campaigns for Fortune 500 brands. Achieved 300% ROI improvement through strategic optimization and scaled revenue to $50M+. Managing teams and vendor relationships while driving innovation in marketing technology.</p>
+                </div>
+                <div class="exp-item">
+                    <h4>Performance Marketing Manager</h4>
+                    <div class="year">2020 - 2023</div>
+                    <p>Managed $10M+ annual marketing budget across 15 brands. Implemented AI-driven optimization strategies that increased conversion rates by 250%. Built and led high-performing marketing teams focused on data-driven results.</p>
+                </div>
+                <div class="exp-item">
+                    <h4>Digital Marketing Specialist</h4>
+                    <div class="year">2018 - 2020</div>
+                    <p>Built and scaled digital presence for companies ranging from startups to enterprises. Specialized in SEO strategy and content marketing. Achieved average 180% organic traffic growth year-over-year across client accounts.</p>
+                </div>
+            </div>
+            <div class="exp-edu-column">
+                <h3>Education & Certifications</h3>
+                <div class="edu-item">
+                    <h4>MBA in Digital Marketing</h4>
+                    <div class="year">2018</div>
+                    <p>Specialized degree focusing on digital strategy, consumer psychology, marketing analytics, and technology integration. Thesis on AI applications in modern marketing.</p>
+                </div>
+                <div class="edu-item">
+                    <h4>Google Analytics Certification</h4>
+                    <div class="year">2019</div>
+                    <p>Advanced certification in Google Analytics 4, measurement strategy, and data-driven marketing insights. Proficient in advanced tracking and attribution modeling.</p>
+                </div>
+                <div class="edu-item">
+                    <h4>HubSpot & Marketo Certified</h4>
+                    <div class="year">2020-2021</div>
+                    <p>Professional certifications in marketing automation platforms. Expertise in inbound methodology, lead nurturing, and marketing operations strategy.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies Section -->
+    <section class="case-studies" id="case-studies">
+        <h2>Case Studies</h2>
+
+        <div class="case-study">
+            <div class="content">
+                <h3>E-Commerce Platform Transformation</h3>
+                <div class="case-study-meta">
+                    <span>📅 Jan 2023 - Dec 2023</span>
+                    <span>💼 E-Commerce</span>
+                    <span>👥 Team Lead</span>
+                </div>
+                <p>Developed and executed comprehensive marketing strategy for a mid-sized e-commerce platform targeting the fashion industry. Implemented integrated approach combining SEO, PPC, email marketing, and retargeting campaigns.</p>
+                <div class="metrics">
+                    <div class="metric">
+                        <h4>+250%</h4>
+                        <p>Online Sales Growth</p>
+                    </div>
+                    <div class="metric">
+                        <h4>+180%</h4>
+                        <p>Organic Traffic</p>
+                    </div>
+                    <div class="metric">
+                        <h4>+85%</h4>
+                        <p>Retention Rate</p>
+                    </div>
+                </div>
+                <p><strong>Key Achievements:</strong> Implemented personalized email marketing that generated 35% of new revenue. Optimized product pages for conversion, improving CTR by 120%. Built strategic partnerships with influencers resulting in 500K+ qualified visitors.</p>
+            </div>
+            <div class="image">
+                <div class="case-study-image">E-Commerce Growth Campaign</div>
+            </div>
+        </div>
+
+        <div class="case-study alt">
+            <div class="image">
+                <div class="case-study-image">SaaS Product Launch</div>
+            </div>
+            <div class="content">
+                <h3>SaaS B2B Product Launch</h3>
+                <div class="case-study-meta">
+                    <span>📅 Mar 2022 - Dec 2022</span>
+                    <span>💼 SaaS / B2B</span>
+                    <span>👥 Strategy Director</span>
+                </div>
+                <p>Orchestrated complete go-to-market strategy for enterprise SaaS product targeting mid-market companies. Created content strategy, thought leadership program, and targeted account-based marketing campaigns.</p>
+                <div class="metrics">
+                    <div class="metric">
+                        <h4>500+</h4>
+                        <p>Enterprise Clients</p>
+                    </div>
+                    <div class="metric">
+                        <h4>$5M</h4>
+                        <p>ARR Generated</p>
+                    </div>
+                    <div class="metric">
+                        <h4>40%</h4>
+                        <p>Close Rate</p>
+                    </div>
+                </div>
+                <p><strong>Key Achievements:</strong> Acquired 500 enterprise clients in year one through LinkedIn and Google advertising. Established strategic partnerships with industry leaders. Created case studies that became top-performing content assets.</p>
+            </div>
+        </div>
+
+        <div class="case-study">
+            <div class="content">
+                <h3>Brand Repositioning Strategy</h3>
+                <div class="case-study-meta">
+                    <span>📅 May 2021 - Nov 2021</span>
+                    <span>💼 Branding</span>
+                    <span>👥 Chief Strategist</span>
+                </div>
+                <p>Led complete brand repositioning for established company losing market share. Conducted competitor analysis, audience research, and developed new brand messaging, visual identity, and omnichannel marketing strategy.</p>
+                <div class="metrics">
+                    <div class="metric">
+                        <h4>+200%</h4>
+                        <p>Brand Awareness</p>
+                    </div>
+                    <div class="metric">
+                        <h4>+150%</h4>
+                        <p>Website Traffic</p>
+                    </div>
+                    <div class="metric">
+                        <h4>#1</h4>
+                        <p>Industry Position</p>
+                    </div>
+                </div>
+                <p><strong>Key Achievements:</strong> Repositioned company as industry leader through integrated campaign. Increased social following by 400%. Improved brand perception metrics by average 85% across all dimensions.</p>
+            </div>
+            <div class="image">
+                <div class="case-study-image">Brand Repositioning</div>
+            </div>
+        </div>
+
+        <div class="case-study alt">
+            <div class="image">
+                <div class="case-study-image">Mobile App Launch Marketing</div>
+            </div>
+            <div class="content">
+                <h3>Mobile App Launch Campaign</h3>
+                <div class="case-study-meta">
+                    <span>📅 Jul 2022 - Sep 2022</span>
+                    <span>💼 Mobile / App Marketing</span>
+                    <span>👥 Campaign Manager</span>
+                </div>
+                <p>Designed and executed pre-launch and launch marketing strategy for consumer mobile application. Created viral social media campaign, influencer partnerships, app store optimization, and paid user acquisition campaigns.</p>
+                <div class="metrics">
+                    <div class="metric">
+                        <h4>100K</h4>
+                        <p>Downloads (Month 1)</p>
+                    </div>
+                    <div class="metric">
+                        <h4>4.8★</h4>
+                        <p>App Rating</p>
+                    </div>
+                    <div class="metric">
+                        <h4>45%</h4>
+                        <p>DAU Rate</p>
+                    </div>
+                </div>
+                <p><strong>Key Achievements:</strong> Generated 100K downloads in first month through coordinated launch campaign. Achieved 4.8-star rating through user experience optimization. Maintained 45% DAU through retention marketing.</p>
+            </div>
+        </div>
+
+        <div class="case-study">
+            <div class="content">
+                <h3>Lead Generation System Optimization</h3>
+                <div class="case-study-meta">
+                    <span>📅 Oct 2021 - Aug 2022</span>
+                    <span>💼 B2B / Lead Gen</span>
+                    <span>👥 Growth Lead</span>
+                </div>
+                <p>Overhauled lead generation system for B2B services company with declining conversions. Implemented landing page optimization, email automation, lead scoring, and sales enablement strategies.</p>
+                <div class="metrics">
+                    <div class="metric">
+                        <h4>+320%</h4>
+                        <p>Qualified Leads</p>
+                    </div>
+                    <div class="metric">
+                        <h4>65%</h4>
+                        <p>Cost Reduction</p>
+                    </div>
+                    <div class="metric">
+                        <h4>+110%</h4>
+                        <p>Deal Value</p>
+                    </div>
+                </div>
+                <p><strong>Key Achievements:</strong> Increased qualified leads by 320% while reducing CAC by 65%. Improved average deal value through better lead qualification. Established marketing/sales alignment framework.</p>
+            </div>
+            <div class="image">
+                <div class="case-study-image">Lead Generation Optimization</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section class="tools-section">
+        <h2>Tools & Platforms</h2>
+        <div class="tools-grid">
+            <div class="tool-item">
+                <div class="tool-icon">📊</div>
+                <p>Google Analytics 4</p>
+            </div>
+            <div class="tool-item">
+                <div class="tool-icon">🔍</div>
+                <p>SEMrush</p>
+            </div>
+            <div class="tool-item">
+                <div class="tool-icon">📈</div>
+                <p>Ahrefs</p>
+            </div>
+            <div class="tool-item">
+                <div class="tool-icon">🎯</div>
+                <p>Google Ads</p>
+            </div>
+            <div class="tool-item">
+                <div class="tool-icon">📱</div>
+                <p>Meta Business Suite</p>
+            </div>
+            <div class="tool-item">
+                <div class="tool-icon">🔗</div>
+                <p>HubSpot</p>
+            </div>
+            <div class="tool-item">
+                <div class="tool-icon">📧</div>
+                <p>Marketo</p>
+            </div>
+            <div class="tool-item">
+                <div class="tool-icon">🤖</div>
+                <p>ChatGPT & Claude</p>
+            </div>
+            <div class="tool-item">
+                <div class="tool-icon">📊</div>
+                <p>Tableau</p>
+            </div>
+            <div class="tool-item">
+                <div class="tool-icon">🎨</div>
+                <p>Figma</p>
+            </div>
+            <div class="tool-item">
+                <div class="tool-icon">📹</div>
+                <p>Loom</p>
+            </div>
+            <div class="tool-item">
+                <div class="tool-icon">💬</div>
+                <p>Slack</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brands Section -->
+    <section class="brands-section">
+        <h2>Brands I've Worked With</h2>
+        <div class="brands-grid">
+            <div class="brand-item">TechStart Innovations</div>
+            <div class="brand-item">EcommercePro Solutions</div>
+            <div class="brand-item">GlobalSoft Corp</div>
+            <div class="brand-item">InnovateCo Ventures</div>
+            <div class="brand-item">DigitalHub Agency</div>
+            <div class="brand-item">MarketPulse Inc</div>
+            <div class="brand-item">CloudNine Systems</div>
+            <div class="brand-item">FutureScale Labs</div>
+            <div class="brand-item">DataDrive Analytics</div>
+            <div class="brand-item">GrowthPath Consulting</div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section class="certifications">
+        <h2>Certifications</h2>
+        <div class="cert-grid">
+            <div class="cert-item">
+                <div class="cert-icon">🏆</div>
+                <h3>Google Analytics</h3>
+                <p>Advanced certification in GA4 and measurement strategy</p>
+            </div>
+            <div class="cert-item">
+                <div class="cert-icon">📱</div>
+                <h3>HubSpot Certified</h3>
+                <p>Marketing automation and inbound methodology</p>
+            </div>
+            <div class="cert-item">
+                <div class="cert-icon">💼</div>
+                <h3>Google Ads Certified</h3>
+                <p>Search and display advertising specialist</p>
+            </div>
+            <div class="cert-item">
+                <div class="cert-icon">🎯</div>
+                <h3>Meta Certified</h3>
+                <p>Facebook and Instagram marketing professional</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Thank You Section -->
+    <section class="thank-you" id="contact">
+        <h2>Let's Create Something Amazing Together</h2>
+        <p>Ready to take your digital marketing to the next level? Whether you're looking for strategy consultation, campaign management, or complete marketing transformation, I'm here to help your business achieve remarkable growth.</p>
+        <a href="mailto:manojkumarrko72@gmail.com" class="cta-button">Get In Touch</a>
+    </section>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeIn 0.6s ease-in';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.case-study, .service-card, .cert-item, .tool-item').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Add fadeIn animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
 </body>
 </html>
